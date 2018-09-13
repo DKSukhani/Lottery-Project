@@ -20,20 +20,14 @@ contract Lottery {
         return poolSize;
     }
     
-
     // the following function is to try and potentially generate a random number
     // keccak256 is the sha3 algorithm
     // in the latest solidity documentation keccak256 can accept only a single argument of the type "bytes"
     // hence the arguments are first parsed as abi.encodePacked()
     function random() private view returns (uint256) {
-        uint(keccak256(abi.encodePacked(block.difficulty, now, players)));
+        return uint(keccak256(abi.encodePacked(block.difficulty, now, players)));
     }
     
-    
-    function pickWinner() {
-        
-    }
-
     
 }
 
