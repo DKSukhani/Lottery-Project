@@ -22,6 +22,7 @@ contract Lottery {
     }
     
     function pickWinner() public {
+        require(msg.sender == manager);
         uint256 indexNumber = random() % players.length;
         players[indexNumber].transfer(poolSize); //.transfer(this.balance) can also be used to send out the entire balance in the SC
         poolSize = 0;
