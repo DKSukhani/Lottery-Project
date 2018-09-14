@@ -16,17 +16,14 @@ contract Lottery {
         poolSize = poolSize + msg.value;
     }
     
-    function totalPoolsize() public view returns (uint256) {
-        return poolSize;
-    }
     
     function random() private view returns (uint256) {
-        return uint(keccak256(abi.encodePacked(block.difficulty, now, players)));
+        return uint(keccak256(abi.encodePacked(block.difficulty, block.timestamp, players)));
     }
     
     function pickWinner() public {
         uint256 indexNumber = random() % players.length;
-        players[indexNumber].transfer(poolSize); //.transfer(this.balance can also be used to send out the entire balance in the SC)
+        players[indexNumber].transfer(poolSize); //.transfer(this.balance) can also be used to send out the entire balance in the SC
     }
     
     
