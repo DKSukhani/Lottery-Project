@@ -21,12 +21,17 @@ contract Lottery {
         return uint(keccak256(abi.encodePacked(block.difficulty, block.timestamp, players)));
     }
     
-    function pickWinner() public {
-        require(msg.sender == manager);
+    function pickWinner() public restricted {
+        // require(msg.sender == manager); this will work too, but we are using restricted
         uint256 indexNumber = random() % players.length;
         players[indexNumber].transfer(poolSize); //.transfer(this.balance) can also be used to send out the entire balance in the SC
         poolSize = 0;
         delete players;
+    }
+    
+    modifier restricted() {
+        require(msg.sender == manager);
+        _;
     }
     
     
