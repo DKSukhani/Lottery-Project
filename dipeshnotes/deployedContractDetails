@@ -1,0 +1,6 @@
+// Contract created address: 0xde23b08699354fb878a7ea554d2a568e103d5d8f
+checked on myEtherwallet:
+
+Address as above:
+ABI - in the ABI.js file
+myEtherwallet shows the two functions upon reading the contract: "setMessage and message"
