@@ -17,13 +17,13 @@ const deployment_function = async () => {
     const deployed_inbox_contract = await new web3.eth.Contract(JSON.parse(interface))
         .deploy({
             data: bytecode,
-            arguments: ['Hi Dipesh!']
+            //arguments: ['Hi Dipesh!']
         })
         .send({ from: accounts[0], gas: '1000000' });
     console.log('the address of the contract that is deployed on the rinkeby network is:');
     console.log(deployed_inbox_contract.options.address);
-    const whatIsTheMessage = await deployed_inbox_contract.methods.message().call();
-    console.log(whatIsTheMessage);
+    // const whatIsTheMessage = await deployed_inbox_contract.methods.message().call();
+    // console.log(whatIsTheMessage);
 }
 
 deployment_function()
