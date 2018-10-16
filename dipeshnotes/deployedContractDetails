@@ -1,6 +1,2 @@
-// Contract created address: 0xde23b08699354fb878a7ea554d2a568e103d5d8f
-checked on myEtherwallet:
-
-Address as above:
-ABI - in the ABI.js file
-myEtherwallet shows the two functions upon reading the contract: "setMessage and message"
+// Contract created address: 0x1d01A586B8B18b0643C7B8205206D46F527b23C0
+// tx hash: https://rinkeby.etherscan.io/tx/0x7e3a2596bfab6b4cf38bbf583466171d644d7242a8f4d0f070543a17ada38fa9
